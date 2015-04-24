@@ -1,57 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-      <meta name="keywords" content="julia, julialang, examples, by example, common, tasks, common tasks, simple, helloworld, hello world, documentation, tutorial">
-      <meta name="description" content="Examples of Common tasks in Julia (Julia Lang)">
-      <meta name="author" content="Samuel Colvin">
-      <title></title>
-      <link rel="icon" type="image/png" href="static/favicon.ico" />
-      <link href="static/external/css/bootstrap.min.css" rel="stylesheet">
-      <link href="static/pygments.css" rel="stylesheet">
-      <link href="static/juliabyexample.css" rel="stylesheet">
-      <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        ga('create', 'UA-57979084-1', 'auto');
-        ga('send', 'pageview');
-      </script>
-  </head>
-  <body data-spy="scroll" data-target=".sidebar">
-  
-    <div class="container">
-        
-      <div class="navbar navbar-default" role="navigation">
-        <div>
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="">Julia By Example</a>
-          </div>
-          <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-              <li>
-                <a class="git-link" href="https://github.com/samuelcolvin/JuliaByExample" data-toggle="tooltip" data-placement="bottom" target="_blank" title="go to github">
-                  <img src="static/github.png" alt="Github Link"/>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-        
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="keywords" content="julia, julialang, examples, by example, common, tasks, common tasks, simple, helloworld, hello world, documentation, tutorial, training, performance, github, git, array, dict, function, input, printf, print, printf, io, read file, common usage, 函数, 循环, 字符串处理, 数组, 多维数组, 字典, 映射, 类型, 输入输出, 画图, 数据框">
+<meta name="description" content="Examples of Common tasks in Julia (Julia Lang)">
+<meta name="author" content="Samuel Colvin, Lijia Yu">
+<title></title>
+<link rel="icon" type="image/png" href="static/favicon.ico" />
+<link href="static/external/css/bootstrap.min.css" rel="stylesheet">
+<link href="static/pygments.css" rel="stylesheet">
+<link href="static/juliabyexample.css" rel="stylesheet">
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-57979084-1', 'auto');
+ga('send', 'pageview');
+</script>
+</head>
+<body data-spy="scroll" data-target=".sidebar">
 
-      <div class="row">
-        <div class="col-sm-9 content">
-          
-          <p>Julia 是一种用于科学计算的高级、高效动态编程语言。</p>
+<div class="container">
+
+  <div class="navbar navbar-default" role="navigation">
+    <div>
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/juliabyexample">Julia By Example</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+
+          <li class="active"><a href="/juliabyexample">Common Usage</a></li>
+
+          <li class=""><a href="julia_source">示例源代码</a></li>
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="http://www.julialang.org">Julia官方主页</a></li>
+          <li class=""><a href="about">关于</a></li>
+          <li><a href="https://github.com/yulijia/JuliaByExample">网站源代码</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-sm-9 content">
+      
+      <p>Julia 是一种用于科学计算的高级、高效动态编程语言。</p>
 
 <p>本站是Julia语言示例的（中文翻译版）非官方网站。</p>
 
@@ -1178,61 +1183,61 @@ associative collections）。除了比较特殊的<code>=&gt;</code>定义语法
 <span class="n">iris</span> <span class="o">=</span> <span class="p">@</span><span class="n">transform</span><span class="p">(</span> <span class="n">iris</span><span class="p">,</span> <span class="n">widthBin</span> <span class="o">=</span> <span class="n">cut</span><span class="p">(:</span><span class="n">SepalWidth</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
 </pre></div>
 
-        </div>
-        <div class="col-sm-3 hidden-xs">
-          <div class="sidebar" data-spy="affix" data-offset-top="150">
-            <ul class="nav sidenav">
-              
-                <li> <a href="#Hello-World">Hello World</a> </li>
-              
-                <li> <a href="#函数">函数</a> </li>
-              
-                <li> <a href="#字符串">字符串</a> </li>
-              
-                <li> <a href="#字符串：转换和格式化">字符串：转换和格式化</a> </li>
-              
-                <li> <a href="#字符串处理">字符串处理</a> </li>
-              
-                <li> <a href="#数组">数组</a> </li>
-              
-                <li> <a href="#错误处理">错误处理</a> </li>
-              
-                <li> <a href="#多维数组">多维数组</a> </li>
-              
-                <li> <a href="#字典">字典</a> </li>
-              
-                <li> <a href="#循环和映射">循环和映射</a> </li>
-              
-                <li> <a href="#类型(Types)">类型(Types)</a> </li>
-              
-                <li> <a href="#输入输出">输入输出</a> </li>
-              
-                <li> <a href="#包和文件引用">包和文件引用</a> </li>
-              
-                <li> <a href="#画图">画图</a> </li>
-              
-                <li> <a href="#TextPlots（文字图解包）">TextPlots（文字图解包）</a> </li>
-              
-                <li> <a href="#PyPlot">PyPlot</a> </li>
-              
-                <li> <a href="#Winston">Winston</a> </li>
-              
-                <li> <a href="#Gadfly">Gadfly</a> </li>
-              
-                <li> <a href="#数据框（DataFrames）">数据框（DataFrames）</a> </li>
-              
-            </ul>
-          </div>
-        </div>
-        </div>
+    </div>
+    <div class="col-sm-3 hidden-xs">
+      <div class="sidebar" data-spy="affix" data-offset-top="150">
+        <ul class="nav sidenav">
+          
+          <li> <a href="#Hello-World">Hello World</a> </li>
+          
+          <li> <a href="#函数">函数</a> </li>
+          
+          <li> <a href="#字符串">字符串</a> </li>
+          
+          <li> <a href="#字符串：转换和格式化">字符串：转换和格式化</a> </li>
+          
+          <li> <a href="#字符串处理">字符串处理</a> </li>
+          
+          <li> <a href="#数组">数组</a> </li>
+          
+          <li> <a href="#错误处理">错误处理</a> </li>
+          
+          <li> <a href="#多维数组">多维数组</a> </li>
+          
+          <li> <a href="#字典">字典</a> </li>
+          
+          <li> <a href="#循环和映射">循环和映射</a> </li>
+          
+          <li> <a href="#类型(Types)">类型(Types)</a> </li>
+          
+          <li> <a href="#输入输出">输入输出</a> </li>
+          
+          <li> <a href="#包和文件引用">包和文件引用</a> </li>
+          
+          <li> <a href="#画图">画图</a> </li>
+          
+          <li> <a href="#TextPlots（文字图解包）">TextPlots（文字图解包）</a> </li>
+          
+          <li> <a href="#PyPlot">PyPlot</a> </li>
+          
+          <li> <a href="#Winston">Winston</a> </li>
+          
+          <li> <a href="#Gadfly">Gadfly</a> </li>
+          
+          <li> <a href="#数据框（DataFrames）">数据框（DataFrames）</a> </li>
+          
+        </ul>
       </div>
-      
-      <script src="static/external/js/jquery-1.11.0.min.js"></script>
-      <script src="static/external/js/bootstrap.min.js"></script>
-      <script type="text/javascript">
-      $(function () {
-          $('a').tooltip();
-      });
-    </script>
-  </body>
+    </div>
+  </div>
+</div>
+
+<script src="static/external/js/jquery-1.11.0.min.js"></script>
+<script src="static/external/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+$(function () {
+    $('a').tooltip();
+    });
+</script>
+</body>
 </html>
